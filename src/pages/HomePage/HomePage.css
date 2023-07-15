@@ -1,0 +1,150 @@
+*, *::before, *::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+@font-face {
+    font-family: midevil;
+    src: url("../../../assets/fonts/MAZIUSREVIEW20.09-Regular.otf");
+}
+
+@font-face {
+    font-family: inter;
+    src: url("../../../assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+:root{
+    --hue: 260;
+
+    --primaryColor: hsl(var(--hue), 56%, 47%);
+
+    --backgroundColorLight: hsl(var(--hue), 100%, 97%);
+
+    --textColorLight: hsl(var(--hue), 93%, 11%);
+
+    --searchBarColorLight: hsl(var(--hue), 100%, 99%);
+
+    --searchBarBorderColorLight: hsl(0, 0%, 84%);
+
+    --recentWordsBackgroundColorLight: hsl(var(--hue), 100%, 92%);
+
+    --deleteRecentWordButtonFillLight: hsl(var(--hue), 100%, 89%);
+
+    --deleteRecentWordButtonBorderColorLight: hsl(var(--hue), 100%, 71%);
+
+    --partOfSpeechActiveLight: hsl(var(--hue), 56%, 47%);
+
+    --partOfSpeechInactiveLight: hsl(var(--hue), 94%, 7%);
+
+    --firstWordFillLight: hsl(var(--hue), 56%, 47%);
+
+    --firstWordLeftBorder: hsl(var(--hue), 56%, 47%);
+
+    --linkColorLight: #2714BF;
+
+    --pink: #B334BA;
+
+    --blue: #347ABA;
+
+    --green: #34BA7A;
+
+    --red: #BA3434;
+
+
+
+
+    --backgroundColorDark: hsl(256, 12%, 19%);
+
+    --textColorDark: hsl(0, 0%, 90%);
+
+    --searchBarColorDark: hsl(260, 12%, 24%);
+
+    --searchBarBorderColorDark: hsl(260, 18%, 43%);
+
+    --recentWordsBackgroundColorDark: hsl(261, 13%, 22%);
+
+    --deleteRecentWordButtonFillDark: hsl(259, 30%, 59%);
+
+    --deleteRecentWordButtonBorderColorDark: hsl(258, 100%, 71%);
+
+    --partOfSpeechActiveDark: hsl(259, 56%, 47%);
+
+    --partOfSpeechInactiveDark: hsl(258, 44%, 37%);
+
+    --firstWordFillDark: hsl(259, 94%, 86%);
+
+    --linkColorLight: hsl(259, 53%, 61%);
+
+} 
+
+button{
+    cursor: pointer;
+}
+
+
+body{
+    background-color: var(--backgroundColorLight);
+    font-family: inter;
+    color: var(--textColorLight);
+}
+
+main{    
+    min-height: 100vh;
+    width:90vw;
+    margin: auto;
+}
+
+.homepage-main .homepage-header{
+    padding: 3rem 0 2rem 0;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homepage-header > button{
+    cursor: pointer;
+}
+
+.left > h1{
+    font-size: 4rem;
+    font-family: midevil;
+}
+
+.left > p{
+    font-size: 1.2rem;
+}
+
+.homepage-header button{
+    background-color: transparent;
+    border:none;
+}
+
+.recent-words-container  h1{
+    font-weight: 600;
+    letter-spacing: -.1rem;
+}
+
+.recent-words-container .headings{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recent-words-container .headings > button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    opacity: .5;
+}
+
+@media screen and (min-width:600px) {
+    .left > h1{
+        font-size: 5rem;
+    }
+}

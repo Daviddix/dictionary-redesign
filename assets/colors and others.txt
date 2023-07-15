@@ -2,7 +2,7 @@
 --backgroundColorLight: #F5F0FF;
 --textColorLight: #120236;
 --searchBarColorLight: #FBF9FF;
---searchBarBorderColorLight: D7D7D7;
+--searchBarBorderColorLight: #D7D7D7;
 --recentWordsBackgroundColorLight: #E5D8FF;
 --deleteRecentWordButtonFillLight: #D9C7FF;
 --deleteRecentWordButtonBorderColorLight: #986BFF;

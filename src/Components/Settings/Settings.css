@@ -1,0 +1,122 @@
+.settings-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.507);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-modal{
+    background-color: var(--backgroundColorLight);
+    width: 85vw;
+    max-width: 35rem;
+    padding: 1rem 1.5rem 3rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+}
+
+.settings-modal > button{
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin-left: auto;
+}
+
+.settings-modal > h1{
+    text-align: center;
+    margin: 0 0 2rem 0;
+    letter-spacing: -.5px;
+}
+
+.theme-container .theme{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.theme > p{
+    font-size: 1.4rem;
+    letter-spacing: -.6px;
+    font-weight: 400;
+}
+
+.theme .fake-radio{
+    padding: .7rem;
+    border-radius: 50%;
+    border: 2px solid hsl(260, 12%, 24%);
+    background-color: transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+}
+
+.theme.active .fake-radio::after{
+    content: "";
+    width:70%;
+    height:70%;
+    border-radius: 50%;
+    background-color: var(--primaryColor);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.accent-colors-container h2{
+    margin: 2rem 0 1rem 0;
+}
+
+.accent-colors-container .accent-colors{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.accent-colors button{
+    padding: 2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.accent-colors button.purple{
+    background-color: var(--primaryColor);
+}
+
+.accent-colors button.pink{
+    background-color: var(--pink);
+}
+
+.accent-colors button.blue{
+    background-color: var(--blue);
+}
+
+.accent-colors button.green{
+    background-color: var(--green);
+}
+
+.accent-colors button.red{
+    background-color: var(--red);
+}

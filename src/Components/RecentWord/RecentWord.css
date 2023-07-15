@@ -1,0 +1,43 @@
+.recent-word{
+    background-color: var(--recentWordsBackgroundColorLight);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem 0rem;
+    width: 100%;
+}
+
+.recent-words p{
+    font-size: 1.6rem;
+    letter-spacing: -.5px;
+    font-weight: 500;
+}
+
+.recent-word button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+p.no-recent-word{
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: -.5px;
+    font-weight: 500;
+    opacity: .7;
+    margin: 3rem 0rem;
+
+}
+
+@media screen and (min-width:900px) {
+    .recent-words{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+
+    p.no-recent-word{
+        font-size: 1.6rem;
+    }
+}

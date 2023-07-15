@@ -1,0 +1,33 @@
+.homepage-main .search-bar{
+    width: 100%;
+    max-width: 40rem;
+    border: 2px solid var(--searchBarBorderColorLight);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: .4rem 1rem;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+    margin: 0 0 3rem 0;
+}
+
+.search-bar input{
+    flex:1;
+    border: none;
+}
+
+.search-bar input::placeholder{
+    font-family: inter;
+    letter-spacing: -.7px;
+    font-weight: 500;
+    opacity: .4;
+    font-size: 1.4rem;
+}
+
+.search-bar button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
