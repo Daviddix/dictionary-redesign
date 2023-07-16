@@ -1,0 +1,34 @@
+.accent-colors button{
+    padding: 2rem;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.accent-colors button.purple{
+    background-color: var(--purple);
+}
+
+.accent-colors button.active{
+    border: 3px solid var(--accentBorder);
+}
+
+.accent-colors button.pink{
+    background-color: var(--pink);
+}
+
+.accent-colors button.blue{
+    background-color: var(--blue);
+}
+
+.accent-colors button.green{
+    background-color: var(--green);
+}
+
+.accent-colors button.red{
+    background-color: var(--red);
+}

@@ -1,8 +1,8 @@
 .homepage-main .search-bar{
     width: 100%;
     max-width: 40rem;
-    border: 2px solid var(--searchBarBorderColorLight);
-    background-color: rgb(255, 255, 255);
+    border: 1px solid var(--searchBarBorderColorLight);
+    background-color: hsl(0, 0%, 100%);
     display: flex;
     padding: .4rem 1rem;
     border-radius: .4rem;

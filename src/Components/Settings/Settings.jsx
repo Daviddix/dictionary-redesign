@@ -1,11 +1,34 @@
 import x from "../../../assets/icons/x-circle.svg"
+import ColorCircle from "../ColorCircle/ColorCircle"
 import "./Settings.css"
+import {useState} from "react"
 
-function Settings() {
+function Settings({toggleSettingsModal, activeAccentColor, setActiveAccentColor}) {
+
+    const accentColors = [{color: "purple", hue: 260}, {color: "pink", hue:297},{color: "blue", hue: 209},{color: "green", hue:151},{color: "red", hue:0}]
+
+
+    const mappedAccentColors = accentColors.map(({color, hue})=>{
+        return <ColorCircle 
+        activeAccentColor={activeAccentColor}
+        setActiveAccentColor={setActiveAccentColor}
+        color={color}
+        hue={hue}
+        key={color} />
+    })
   return (
-    <div className="settings-overlay">
-        <div className="settings-modal">
-            <button>
+    <div 
+    onClick={toggleSettingsModal}
+    className="settings-overlay">
+
+        <div 
+        onClick={(e)=>{
+            e.stopPropagation()
+        }}
+        className="settings-modal">
+            <button
+            onClick={toggleSettingsModal}
+            >
                 <img src={x} alt="close modal" />
             </button>
                 <h1>Settings</h1>
@@ -43,11 +66,7 @@ function Settings() {
                     <h2>Accent Color</h2>
 
                     <div className="accent-colors">
-                        <button className="active purple"></button>
-                        <button className="active pink"></button>
-                        <button className="active blue"></button>
-                        <button className="active green"></button>
-                        <button className="active red"></button>
+                        {mappedAccentColors}
                     </div>
                 </div>
         </div>

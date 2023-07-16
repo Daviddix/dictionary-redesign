@@ -1,3 +1,4 @@
+import { useLayoutEffect, useState } from "react"
 import settings from "../../../assets/icons/settings.svg"
 import RecentWord from "../../Components/RecentWord/RecentWord"
 import SearchBar from "../../Components/SearchBar/SearchBar"
@@ -5,6 +6,19 @@ import Settings from "../../Components/Settings/Settings"
 import "./HomePage.css"
 
 function HomePage() {
+  const [showSettingsModal, setShowSettingsModal] = useState(false)
+  const [activeAccentColor, setActiveAccentColor] = useState(()=> localStorage.getItem("active-accent-color") || "purple")
+
+
+  useLayoutEffect(()=>{
+    const hueFromLocalStorage = localStorage.getItem("accent-hue")
+
+    document.documentElement.style.setProperty('--hue', hueFromLocalStorage || 260)
+  }, [])
+
+  function toggleSettingsModal(){
+    setShowSettingsModal((prev)=> !prev)
+  }
   return (
     <main className='homepage-main'>
     <header className="homepage-header">
@@ -13,7 +27,9 @@ function HomePage() {
         <p>get definition to words</p>
       </div>
 
-      <button>
+      <button
+      onClick={toggleSettingsModal}
+      >
         <img 
         src={settings} 
         alt="open settings"
@@ -40,7 +56,10 @@ function HomePage() {
 
     </div>
 
-    {/* <Settings /> */}
+    {showSettingsModal && <Settings 
+    activeAccentColor={activeAccentColor}
+    setActiveAccentColor={setActiveAccentColor}
+    toggleSettingsModal={toggleSettingsModal} />}
   </main>
   )
 }

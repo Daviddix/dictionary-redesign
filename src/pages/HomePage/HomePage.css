@@ -19,7 +19,6 @@ html{
 }
 
 :root{
-    --hue: 260; 
 
     --primaryColor: hsl(var(--hue), 56%, 47%);
 
@@ -47,13 +46,17 @@ html{
 
     --linkColorLight: #2714BF;
 
-    --pink: #B334BA;
+    --accentBorder: hsl(var(--hue), 96%, 87%);
 
-    --blue: #347ABA;
+    --purple: hsl(260, 56%, 47%);
 
-    --green: #34BA7A;
+    --pink: hsl(297, 56%, 47%);
 
-    --red: #BA3434;
+    --blue: hsl(209, 56%, 47%);
+
+    --green: hsl(151, 56%, 47%);
+
+    --red: hsl(0, 56%, 47%);
 
 
 
