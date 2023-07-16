@@ -1,0 +1,110 @@
+header.results-page-header{
+    background-color: white;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.185);
+    padding: 1.5rem 0rem;
+    position: sticky;
+    top:0;
+    left:0;
+}
+
+.header-inner{
+    width:90vw;
+    max-width: 60rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header-inner > button{
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    background: transparent;
+    border: none;
+    margin: 0 2rem 0 0;
+}
+
+.result-from-search > header{
+    margin: 2rem 0rem;
+}
+
+.text-and-icon > h1{
+    font-size: 4.8rem;
+    font-family: midevil;
+}
+
+.text-and-icon{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: fit-content;
+    max-width: 90%;
+    margin: 0 0 .5rem 0;
+}
+
+.text-and-icon > button{
+    background-color: transparent;
+    border: none;
+}
+
+.text-and-icon > button img{
+    max-width: 2rem;
+    margin: 0 0 0 .6rem;
+}
+
+.result-from-search i{
+    font-size: 1.4rem;
+}
+
+.definitions > div{
+    margin: 0 0 2rem 0;
+}
+
+.definitions > div p{
+    font-size: 1.4rem;
+    letter-spacing: -.2px;
+}
+
+.definitions .first-definition{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--firstWordFillLight);
+    position: relative;
+    padding: .6rem .6rem .6rem 1.5rem;
+}
+
+.lighter{
+    width: .7rem;
+    height: 100%;
+    background-color: var(--firstWordLeftBorder);
+    margin: 0 .5rem 0 0;
+    position: absolute;
+    left: 0;
+}
+
+.definitions > div p::first-letter{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.external-link{
+    font-size: 1.4rem;
+    max-width: 100%;
+    margin: 6rem 0 2rem;
+}
+
+@media screen and (min-width:600px) {
+    .header-inner > button{
+        margin: 0 5rem 0 0;
+    }
+
+    .definitions > div p
+    , .external-link
+    {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,20 @@
+.parts-of-speech-container{
+    max-width: 100%;
+    max-width: 32rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 2rem 0;
+}
+
+.part-of-speech{
+    max-width: fit-content;
+    padding: .5rem 2.5rem;
+    background-color: var(--partOfSpeechActiveLight);
+    border: none;
+}
+
+.part-of-speech p{
+    font-size: 1.4rem;
+    color: white;
+}

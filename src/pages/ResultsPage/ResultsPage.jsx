@@ -2,29 +2,37 @@ import backArrow from  "../../../assets/icons/arrow-right.svg"
 import SearchBar from "../../Components/SearchBar/SearchBar"
 import volume from "../../../assets/icons/volume-2.svg"
 import PartOfSpeech from "../../Components/PartOfSpeech/PartOfSpeech"
+import "./ResultsPage.css"
 
 function ResultsPage() {
   return (
-    <main className='results-page-main'>
-    <header>
-    <button>
+    <>
+  <header className="results-page-header">
+    <div className="header-inner">
+        <button>
         <img src={backArrow} alt="back to home page" />
     </button>
 
     <SearchBar />
+    </div>    
+    
     </header>
+
+    <main className='results-page-main'>
+    
 
     <div className="result-from-search">
         <header>
             <div className="text-and-icon">
                 <h1>Apple</h1>
-                <button><img src={volume} alt="listen to pronunciation" /> </button>
-                <br />
-                <i>/applea/</i>
+                <button><img src={volume} alt="listen to pronunciation" /> </button>                
             </div>
+            <i>/applea/</i>
         </header>
 
         <div className="parts-of-speech-container">
+            <PartOfSpeech />
+            <PartOfSpeech />
             <PartOfSpeech />
         </div>
 
@@ -54,6 +62,7 @@ function ResultsPage() {
         </p>
     </div>
     </main>
+    </>
   )
 }
 

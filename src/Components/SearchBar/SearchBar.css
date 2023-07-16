@@ -31,3 +31,18 @@
     border: none;
     cursor: pointer;
 }
+
+/* search bar on result page */
+.results-page-header .search-bar{
+    width: 90%;
+    max-width: 40rem;
+    border: 1px solid var(--searchBarBorderColorLight);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: .4rem 1rem;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+}

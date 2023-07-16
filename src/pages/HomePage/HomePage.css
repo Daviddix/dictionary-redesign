@@ -19,7 +19,7 @@ html{
 }
 
 :root{
-    --hue: 260;
+    --hue: 260; 
 
     --primaryColor: hsl(var(--hue), 56%, 47%);
 
@@ -41,7 +41,7 @@ html{
 
     --partOfSpeechInactiveLight: hsl(var(--hue), 94%, 7%);
 
-    --firstWordFillLight: hsl(var(--hue), 56%, 47%);
+    --firstWordFillLight: hsla(var(--hue), 56%, 47%, .2);
 
     --firstWordLeftBorder: hsl(var(--hue), 56%, 47%);
 
@@ -84,6 +84,7 @@ html{
 
 button{
     cursor: pointer;
+    font-family: inherit;
 }
 
 
@@ -93,9 +94,10 @@ body{
     color: var(--textColorLight);
 }
 
-main{    
-    min-height: 100vh;
+main{
+    min-height: 100%;
     width:90vw;
+    max-width: 60rem;
     margin: auto;
 }
 

@@ -1,7 +1,8 @@
+import "./PartOfSpeech.css"
 
 function PartOfSpeech() {
   return (
-    <div>Noun</div>
+    <button className="part-of-speech"><p>Noun</p></button>
   )
 }
 
