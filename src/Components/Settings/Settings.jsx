@@ -1,11 +1,32 @@
 import x from "../../../assets/icons/x-circle.svg"
 import ColorCircle from "../ColorCircle/ColorCircle"
+import Theme from "../Theme/Theme"
 import "./Settings.css"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 
 function Settings({toggleSettingsModal, activeAccentColor, setActiveAccentColor}) {
+    const [activeTheme, setActiveTheme] = useState(localStorage.getItem("theme") || "Light")
 
-    const accentColors = [{color: "purple", hue: 260}, {color: "pink", hue:297},{color: "blue", hue: 209},{color: "green", hue:151},{color: "red", hue:0}]
+    useEffect(()=>{
+        if (activeTheme == "System Settings Dark" || activeTheme == "System Settings Light") {
+            setActiveTheme("System Settings")
+        }
+    }, [])
+
+    const accentColors = 
+    [
+    {color: "purple", hue: 260}, 
+    {color: "pink", hue:297},
+    {color: "blue", hue: 209},
+    {color: "green", hue:151},
+    {color: "red", hue:0}
+    ]
+
+    const themes = [
+        {text: "Dark", active: false},
+         {text: "Light", active:false},
+          {text:"System Settings", active:true}
+    ]
 
 
     const mappedAccentColors = accentColors.map(({color, hue})=>{
@@ -16,6 +37,16 @@ function Settings({toggleSettingsModal, activeAccentColor, setActiveAccentColor}
         hue={hue}
         key={color} />
     })
+
+    const mappedThemes = themes.map(({text, active})=>{
+        return <Theme 
+        active={active}
+        activeTheme={activeTheme}
+        setActiveTheme={setActiveTheme}
+        text={text} />
+    })
+
+
   return (
     <div 
     onClick={toggleSettingsModal}
@@ -36,30 +67,7 @@ function Settings({toggleSettingsModal, activeAccentColor, setActiveAccentColor}
                 <div className="theme-container">
                     <h2>Theme</h2>
 
-                    <div className="theme active">
-                        <p>Dark</p>                        
-                        
-                        <button className="fake-radio">
-                            
-                        </button>
-                    </div>
-
-                    <div className="theme">
-                        <p>Light</p>
-                        
-                        
-                        <button className="fake-radio">
-                            
-                        </button>
-                    </div>
-                    <div className="theme">
-                        <p>System Settings</p>
-                        
-                        
-                        <button className="fake-radio">
-                            
-                        </button>
-                    </div>
+                    {mappedThemes}
                 </div>
 
                 <div className="accent-colors-container">

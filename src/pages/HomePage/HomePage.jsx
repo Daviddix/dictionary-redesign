@@ -9,13 +9,6 @@ function HomePage() {
   const [showSettingsModal, setShowSettingsModal] = useState(false)
   const [activeAccentColor, setActiveAccentColor] = useState(()=> localStorage.getItem("active-accent-color") || "purple")
 
-
-  useLayoutEffect(()=>{
-    const hueFromLocalStorage = localStorage.getItem("accent-hue")
-
-    document.documentElement.style.setProperty('--hue', hueFromLocalStorage || 260)
-  }, [])
-
   function toggleSettingsModal(){
     setShowSettingsModal((prev)=> !prev)
   }
