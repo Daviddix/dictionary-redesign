@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 40rem;
     border: 1px solid var(--searchBarBorderColorLight);
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--searchBarColorLight);
     display: flex;
     padding: .4rem 1rem;
     border-radius: .4rem;
@@ -16,6 +16,8 @@
 .search-bar input{
     flex:1;
     border: none;
+    background-color: var(--searchBarColorLight);
+    outline: none;
 }
 
 .search-bar input::placeholder{
@@ -24,6 +26,7 @@
     font-weight: 500;
     opacity: .4;
     font-size: 1.4rem;
+    color: var(--textColorLight);
 }
 
 .search-bar button{
@@ -37,7 +40,7 @@
     width: 90%;
     max-width: 40rem;
     border: 1px solid var(--searchBarBorderColorLight);
-    background-color: rgb(255, 255, 255);
+    background-color: var(--searchBarColorLight);
     display: flex;
     padding: .4rem 1rem;
     border-radius: .4rem;

@@ -20,6 +20,15 @@
     cursor: pointer;
 }
 
+.recent-word button svg{
+    fill: var(--deleteRecentWordButtonFillLight);
+    color: rgb(48, 47, 47);
+}
+
+.recent-word button svg circle{
+    stroke: var(--deleteRecentWordButtonBorderColorLight);    
+}
+
 p.no-recent-word{
     font-size: 1.4rem;
     text-align: center;

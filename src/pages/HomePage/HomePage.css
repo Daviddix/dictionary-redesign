@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+*::selection{
+    background-color: var(--primaryColor);
+    color: rgb(255, 255, 255);
+}
+
 html{
     font-size: 62.5%;
 }
@@ -18,6 +23,10 @@ html{
     src: url("../../../assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
 }
 
+svg{
+    color: var(--textColorLight);
+}
+
 body[data-theme = "Light"],
 body[data-theme= "System Settings Light"]
 {
@@ -28,15 +37,17 @@ body[data-theme= "System Settings Light"]
 
     --textColorLight: hsl(var(--hue), 93%, 11%);
 
-    --searchBarColorLight: hsl(var(--hue), 100%, 99%);
+    --searchBarColorLight: hsl(var(--hue), 90%, 96%);
 
-    --searchBarBorderColorLight: hsl(0, 0%, 84%);
+    --searchBarBorderColorLight: hsl(var(--hue), 18%, 84%);
 
     --recentWordsBackgroundColorLight: hsl(var(--hue), 100%, 92%);
 
-    --deleteRecentWordButtonFillLight: hsl(var(--hue), 100%, 89%);
+    --deleteRecentWordButtonFillLight: hsl(var(--hue), 100%, 81%);
 
     --deleteRecentWordButtonBorderColorLight: hsl(var(--hue), 100%, 71%);
+
+    --resultPageHeaderLight : hsl(var(--hue), 100%, 98%);
 
     --partOfSpeechActiveLight: hsl(var(--hue), 56%, 47%);
 
@@ -68,7 +79,7 @@ body[data-theme= "System Settings Dark"]
 
     --backgroundColorLight: hsl(var(--hue), 12%, 19%);
 
-    --textColorLight: hsl(0, 0%, 90%);
+    --textColorLight: hsl(var(--hue), 40%, 92%);
 
     --searchBarColorLight: hsl(var(--hue), 12%, 24%);
 
@@ -80,11 +91,15 @@ body[data-theme= "System Settings Dark"]
 
     --deleteRecentWordButtonBorderColorLight: hsl(var(--hue), 100%, 71%);
 
+    --resultPageHeaderLight : hsl(var(--hue), 14%, 29%);
+
     --partOfSpeechActiveLight: hsl(var(--hue), 56%, 47%);
 
     --partOfSpeechInactiveLight: hsl(var(--hue), 44%, 37%);
 
-    --firstWordFillLight: hsl(var(--hue), 94%, 86%);
+    --firstWordFillLight: hsla(var(--hue), 94%, 86%, .3);
+
+    --firstWordLeftBorder: hsl(var(--hue), 56%, 47%);
 
     --linkColorLight: hsl(var(--hue), 53%, 61%);
 
@@ -117,7 +132,7 @@ body{
 main{
     min-height: 100%;
     width:90vw;
-    max-width: 80rem;
+    max-width: 70rem;
     margin: auto;
 }
 
@@ -161,8 +176,9 @@ main{
     background-color: transparent;
     border: none;
     font-size: 1.4rem;
-    font-weight: 700;
-    opacity: .5;
+    font-weight: 600;
+    opacity: .6;
+    color: var(--textColorLight);
 }
 
 @media screen and (min-width:600px) {

@@ -1,6 +1,4 @@
-import backArrow from  "../../../assets/icons/arrow-right.svg"
 import SearchBar from "../../Components/SearchBar/SearchBar"
-import volume from "../../../assets/icons/volume-2.svg"
 import PartOfSpeech from "../../Components/PartOfSpeech/PartOfSpeech"
 import "./ResultsPage.css"
 
@@ -10,7 +8,11 @@ function ResultsPage() {
   <header className="results-page-header">
     <div className="header-inner">
         <button>
-        <img src={backArrow} alt="back to home page" />
+
+        <svg  
+        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19">            
+        </polyline>
+        </svg>
     </button>
 
     <SearchBar />
@@ -25,7 +27,14 @@ function ResultsPage() {
         <header>
             <div className="text-and-icon">
                 <h1>Apple</h1>
-                <button><img src={volume} alt="listen to pronunciation" /> </button>                
+                <button>
+                <svg 
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" strokeLinejoin="round" className="feather feather-volume-2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07">
+                </path>
+                </svg>
+                </button>                
             </div>
             <i>/applea/</i>
         </header>

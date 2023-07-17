@@ -1,5 +1,5 @@
 header.results-page-header{
-    background-color: white;
+    background-color: var(--resultPageHeaderLight);
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.185);
     padding: 1.5rem 0rem;
     position: sticky;
@@ -9,7 +9,7 @@ header.results-page-header{
 
 .header-inner{
     width:90vw;
-    max-width: 60rem;
+    max-width: 70rem;
     margin: auto;
     display: flex;
     align-items: center;
@@ -50,7 +50,7 @@ header.results-page-header{
     border: none;
 }
 
-.text-and-icon > button img{
+.text-and-icon > button svg{
     max-width: 2rem;
     margin: 0 0 0 .6rem;
 }
@@ -66,6 +66,7 @@ header.results-page-header{
 .definitions > div p{
     font-size: 1.4rem;
     letter-spacing: -.2px;
+    line-height: 1.3;
 }
 
 .definitions .first-definition{
@@ -97,9 +98,13 @@ header.results-page-header{
     margin: 6rem 0 2rem;
 }
 
+.external-link a{
+    color: var(--linkColorLight);
+}
+
 @media screen and (min-width:600px) {
     .header-inner > button{
-        margin: 0 5rem 0 0;
+        margin: 0 8rem 0 0;
     }
 
     .definitions > div p
