@@ -53,8 +53,6 @@ function HomePage() {
       </div>      
 
       <div className="recent-words">
-      <RecentWord />
-      <RecentWord />
       </div>
 
      <EmptyRecentWord />

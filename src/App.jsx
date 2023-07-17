@@ -16,7 +16,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<HomePage />} />
-      <Route path='/result' element={<ResultsPage />} />
+      <Route path='/result/:wordToSearchFor' element={<ResultsPage />} />
     </Routes>
    
   )

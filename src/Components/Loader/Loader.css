@@ -1,0 +1,39 @@
+.loader-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color: var(--backgroundColorLight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-overlay p{
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 700;
+    border: 2px solid var(--primaryColor);
+    padding: 3rem;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    background-image:linear-gradient(to bottom right, hsl(var(--hue), 90%, 80%),var(--primaryColor));
+    background-size: 200% 200%;
+    animation: slide 3s ease infinite alternate;
+    -webkit-animation: slide 3s ease infinite alternate;
+}
+
+@keyframes slide {
+    100%{
+    background-position: 100% 100%;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+}

@@ -37,7 +37,7 @@ body[data-theme= "System Settings Light"]
 
     --textColorLight: hsl(var(--hue), 93%, 11%);
 
-    --searchBarColorLight: hsl(var(--hue), 90%, 96%);
+    --searchBarColorLight: hsl(var(--hue), 90%, 98%);
 
     --searchBarBorderColorLight: hsl(var(--hue), 18%, 84%);
 

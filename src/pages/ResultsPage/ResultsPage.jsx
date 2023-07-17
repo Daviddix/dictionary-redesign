@@ -1,8 +1,29 @@
 import SearchBar from "../../Components/SearchBar/SearchBar"
 import PartOfSpeech from "../../Components/PartOfSpeech/PartOfSpeech"
 import "./ResultsPage.css"
+import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import Loader from "../../Components/Loader/Loader"
 
 function ResultsPage() {
+    const {wordToSearchFor} = useParams()
+    const [dataFromFetch, setDataFromFetch] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(()=>{
+        fetchDataForWord()
+    }, [])
+
+    function fetchDataForWord(){
+        // setIsLoading(true)
+        // fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/apple`)
+        // .then(raw => raw.json())
+        // .then((data)=>{
+        //     setDataFromFetch(data)
+        //     console.log(data);
+        //     setIsLoading(false)
+        // })
+    }
   return (
     <>
   <header className="results-page-header">
@@ -26,7 +47,7 @@ function ResultsPage() {
     <div className="result-from-search">
         <header>
             <div className="text-and-icon">
-                <h1>Apple</h1>
+                <h1>{wordToSearchFor}</h1>
                 <button>
                 <svg 
                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" strokeLinejoin="round" className="feather feather-volume-2">
@@ -71,6 +92,8 @@ function ResultsPage() {
         </p>
     </div>
     </main>
+    
+    {isLoading && <Loader />}
     </>
   )
 }
