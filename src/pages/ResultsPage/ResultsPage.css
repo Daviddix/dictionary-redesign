@@ -36,6 +36,7 @@ header.results-page-header{
     font-size: 4.8rem;
     font-family: midevil;
     text-transform: capitalize;
+    font-weight: 500;
 }
 
 .text-and-icon{
