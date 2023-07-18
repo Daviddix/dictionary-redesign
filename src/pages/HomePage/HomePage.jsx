@@ -10,16 +10,20 @@ function HomePage({recentWords,setRecentWords}) {
   const [showSettingsModal, setShowSettingsModal] = useState(false)
   const [activeAccentColor, setActiveAccentColor] = useState(()=> localStorage.getItem("active-accent-color") || "purple")
 
+  useEffect(() => {
+    setRecentWords(noDuplicates) 
+  }, [])
+
   const noDuplicates = [...new Set(recentWords)]
   const noDuplicatesMapped = noDuplicates.map((word)=>{
     return <RecentWord 
+    recentWords={recentWords}
+    setRecentWords={setRecentWords}
     key={word}
     word={word} />
   })
 
-  useEffect(() => {
-    setRecentWords(noDuplicates) 
-  }, [])
+  
   
 
  
