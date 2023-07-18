@@ -1,0 +1,42 @@
+.err-body{
+    max-width: 50rem;
+    margin: auto;
+}
+
+.err-body > p{
+    letter-spacing: -.4px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.err{
+    margin: 2rem 0;
+    background-color: hsla(0, 97%, 69%, 0.377);
+    padding: .9rem;
+    color: rgb(114, 0, 0);
+}
+
+p.res{
+    margin: 2rem 0;
+    background-color: var(--firstWordFillLight);
+    padding: .9rem;
+    max-width: fit-content;
+    color: var(--textColorLight);
+    max-width: 100%;
+    border: 1px solid var(--primaryColor);
+}
+
+.err::selection{
+    background-color: rgb(196, 11, 11);
+}
+
+@media screen and (min-width:600px) {
+    .err-body > p{
+        letter-spacing: -.4px;
+        font-size: 1.6rem;
+    }
+}

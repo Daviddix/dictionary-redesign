@@ -1,8 +1,14 @@
 import "./PartOfSpeech.css"
 
-function PartOfSpeech() {
+function PartOfSpeech({value, index, setPartOfSpeechIndex, partOfSpeechIndex}) {
   return (
-    <button className="part-of-speech"><p>Noun</p></button>
+    <button 
+    onClick={()=>{
+      setPartOfSpeechIndex(index)
+    }}
+    className={index == partOfSpeechIndex? "part-of-speech active" : "part-of-speech"}>
+      <p>{value}</p>
+      </button>
   )
 }
 

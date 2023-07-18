@@ -1,34 +1,87 @@
 import SearchBar from "../../Components/SearchBar/SearchBar"
 import PartOfSpeech from "../../Components/PartOfSpeech/PartOfSpeech"
 import "./ResultsPage.css"
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { useEffect, useRef, useState } from "react"
 import Loader from "../../Components/Loader/Loader"
+import Error from "../../Components/Error/Error"
+import Definition from "../../Components/Definition/Definition"
 
 function ResultsPage() {
     const {wordToSearchFor} = useParams()
-    const [dataFromFetch, setDataFromFetch] = useState({})
-    const [isLoading, setIsLoading] = useState(false)
+    const [dataFromFetch, setDataFromFetch] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(false)
+    const [partOfSpeechIndex, setPartOfSpeechIndex] = useState(0)
+    const audioRef = useRef()
+    const navigate = useNavigate()
 
     useEffect(()=>{
         fetchDataForWord()
-    }, [])
+    }, [wordToSearchFor])
 
     function fetchDataForWord(){
-        // setIsLoading(true)
-        // fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/apple`)
-        // .then(raw => raw.json())
-        // .then((data)=>{
-        //     setDataFromFetch(data)
-        //     console.log(data);
-        //     setIsLoading(false)
-        // })
+        setIsLoading(true)
+       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordToSearchFor}`)
+       .then((data)=> data.json())
+       .then((result)=>{
+        if(result.title){
+            throw new Error
+        }else{
+            setError(false)
+            setDataFromFetch(result[0])
+            setIsLoading(false)
+        }
+        
+       })
+       .catch((err)=>{
+        setError(true)
+        setIsLoading(false)
+        console.error(err)
+       })
     }
+
+    function playAudio(ref){
+        ref.current.play()
+    }
+
+    function navigateBack(){
+        navigate(-1)
+    }
+
+    const mappedPartOfSpeech = dataFromFetch && dataFromFetch.meanings.map((meaning, index)=>{
+        return <PartOfSpeech 
+        setPartOfSpeechIndex={setPartOfSpeechIndex}
+        partOfSpeechIndex={partOfSpeechIndex}
+        key={meaning.partOfSpeech}
+        index={index}
+        value={meaning.partOfSpeech} />
+    })
+
+    const mappedDefinitions = dataFromFetch && dataFromFetch.meanings[partOfSpeechIndex].definitions.map((definition, index)=>{
+        if (index <= 3) {
+            return <Definition 
+            key={definition.definition}
+            count={index}
+            text={definition.definition} />
+        }else{
+            return
+        }
+    })
+
+    
+
+    
   return (
     <>
   <header className="results-page-header">
     <div className="header-inner">
-        <button>
+        <button
+        onClick={()=>{
+            navigateBack()
+            console.log("heyy");
+        }}
+        >
 
         <svg  
         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19">            
@@ -44,58 +97,45 @@ function ResultsPage() {
     <main className='results-page-main'>
     
 
-    <div className="result-from-search">
+    {error == false? <div className="result-from-search">
         <header>
             <div className="text-and-icon">
-                <h1>{wordToSearchFor}</h1>
-                <button>
+                <h1>{dataFromFetch.word}</h1>
+                <button
+                onClick={()=> playAudio(audioRef)}
+                >
                 <svg 
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" stroke-linecap="round" strokeLinejoin="round" className="feather feather-volume-2">
+                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-volume-2">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07">
                 </path>
                 </svg>
                 </button>                
             </div>
-            <i>/applea/</i>
+            <i>{dataFromFetch?.phonetic}</i>
         </header>
 
         <div className="parts-of-speech-container">
-            <PartOfSpeech />
-            <PartOfSpeech />
-            <PartOfSpeech />
+            {mappedPartOfSpeech}
         </div>
 
         <div className="definitions">
-            <div className="first-definition">
-                <div className="lighter"></div>
-                <p className="text">
-                    1. Any of various tree-borne fruits or vegetables especially considered as resembling an apple, also (with qualifying words) used to form the names of other specific fruits such as custard apple, thorn apple e.t.c
-                </p>
-            </div>
-
-            <div className="definition">
-                <p className="text">
-                    2. The fruit of the Tree of Knowledge, eaten by Adam and Eve according to post-Biblical Christian tradition; the forbidden fruit.
-                </p>
-            </div>
-
-            <div className="definition">
-                <p className="text">
-                    3. A tree of the genus Malus, especially one cultivated for it's edible fruit; the apple tree
-                </p>
-            </div>
+            {mappedDefinitions}
         </div>
 
         <p className="external-link">
-            Read More: <a href="" target="_blank">https://en.wikionary.org/wiki/apple</a>
+            Read More: <a href="" target="_blank">{dataFromFetch?.sourceUrls[0]}</a>
         </p>
-    </div>
+    </div>: <Error />}
     </main>
-    
+
+    <audio 
+    ref={audioRef}
+    src={dataFromFetch?.phonetics[0]?.audio}>
+    </audio>
+
     {isLoading && <Loader />}
     </>
-  )
-}
+  )}
 
 export default ResultsPage

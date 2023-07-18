@@ -8,7 +8,8 @@ function SearchBar() {
   const [wordToSearchFor, setWordToSearchFor] = useState("")
   return (
     <form 
-    onSubmit={()=>{
+    onSubmit={(e)=>{
+      e.preventDefault()
       navigate(`/result/${wordToSearchFor}`)
     }}
     className="search-bar">

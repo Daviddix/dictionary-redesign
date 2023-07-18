@@ -3,18 +3,25 @@
     max-width: 32rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin: 0 0 2rem 0;
 }
 
 .part-of-speech{
     max-width: fit-content;
     padding: .5rem 2.5rem;
-    background-color: var(--partOfSpeechActiveLight);
+    background-color: var(--partOfSpeechInactiveLight);
+    opacity: .4;
     border: none;
+    margin: 0 2rem 0 0;
+}
+
+.part-of-speech.active{
+    background-color: var(--partOfSpeechActiveLight);
+    opacity: 1;
 }
 
 .part-of-speech p{
     font-size: 1.4rem;
     color: white;
+    text-transform: capitalize;
 }

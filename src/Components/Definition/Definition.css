@@ -1,0 +1,40 @@
+.definitions > div{
+    margin: 0 0 2rem 0;
+}
+
+.definitions > div p{
+    font-size: 1.4rem;
+    letter-spacing: -.2px;
+    line-height: 1.3;
+}
+
+.definitions .first-definition{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--firstWordFillLight);
+    position: relative;
+    padding: .6rem .6rem .6rem 1.5rem;
+}
+
+.lighter{
+    width: .7rem;
+    height: 100%;
+    background-color: var(--firstWordLeftBorder);
+    margin: 0 .5rem 0 0;
+    position: absolute;
+    left: 0;
+}
+
+.definitions > div p::first-letter{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+@media screen and (min-width:600px) {
+
+    .definitions > div p
+    {
+        font-size: 1.6rem;
+    }
+}

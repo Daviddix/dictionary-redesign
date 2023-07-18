@@ -57,7 +57,7 @@ body[data-theme= "System Settings Light"]
 
     --firstWordLeftBorder: hsl(var(--hue), 56%, 47%);
 
-    --linkColorLight: #2714BF;
+    --linkColorLight: hsl(var(--hue), 81%, 41%);
 
     --accentBorder: hsl(var(--hue), 96%, 87%);
 
