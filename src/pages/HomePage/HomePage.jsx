@@ -1,5 +1,4 @@
 import { useEffect, useLayoutEffect, useState } from "react"
-import settings from "../../../assets/icons/settings.svg"
 import RecentWord from "../../Components/RecentWord/RecentWord"
 import SearchBar from "../../Components/SearchBar/SearchBar"
 import Settings from "../../Components/Settings/Settings"

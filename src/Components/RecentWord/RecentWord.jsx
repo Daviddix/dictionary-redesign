@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import x from "../../../assets/icons/x-circle.svg"
 import "./RecentWord.css"
 
 function RecentWord({word, setRecentWords, recentWords}) {
