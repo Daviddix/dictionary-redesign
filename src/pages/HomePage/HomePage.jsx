@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import settings from "../../../assets/icons/settings.svg"
 import RecentWord from "../../Components/RecentWord/RecentWord"
 import SearchBar from "../../Components/SearchBar/SearchBar"
@@ -6,9 +6,23 @@ import Settings from "../../Components/Settings/Settings"
 import "./HomePage.css"
 import EmptyRecentWord from "../../Components/EmptyRecentWord/EmptyRecentWord"
 
-function HomePage() {
+function HomePage({recentWords,setRecentWords}) {
   const [showSettingsModal, setShowSettingsModal] = useState(false)
   const [activeAccentColor, setActiveAccentColor] = useState(()=> localStorage.getItem("active-accent-color") || "purple")
+
+  const noDuplicates = [...new Set(recentWords)]
+  const noDuplicatesMapped = noDuplicates.map((word)=>{
+    return <RecentWord 
+    key={word}
+    word={word} />
+  })
+
+  useEffect(() => {
+    setRecentWords(noDuplicates) 
+  }, [])
+  
+
+ 
 
   function toggleSettingsModal(){
     setShowSettingsModal((prev)=> !prev)
@@ -49,13 +63,21 @@ function HomePage() {
       <div className="headings">
         <h1>Recent Words</h1>
 
-      <button>Clear All</button>
+      {recentWords.length > 0 && 
+      <button
+      onClick={()=>{
+        // localStorage.setItem("recent-words-from-dictionary", JSON.stringify([]))
+        setRecentWords([])
+      }}
+      >Clear All</button>
+      }
       </div>      
 
       <div className="recent-words">
+        {noDuplicatesMapped}
       </div>
 
-     <EmptyRecentWord />
+     {recentWords.length == 0 && <EmptyRecentWord />}
 
     </div>
 

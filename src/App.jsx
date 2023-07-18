@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
-import {useLayoutEffect} from "react"
+import {useEffect, useLayoutEffect, useState} from "react"
 import './App.css'
 import HomePage from './pages/HomePage/HomePage'
 import ResultsPage from './pages/ResultsPage/ResultsPage'
 
 function App() {
+  const [recentWords, setRecentWords] = useState(JSON.parse(localStorage.getItem("recent-words-from-dictionary")) || [])
+
   useLayoutEffect(()=>{
     const hueFromLocalStorage = localStorage.getItem("accent-hue")
 
@@ -13,10 +15,16 @@ function App() {
     document.body.dataset.theme = localStorage.getItem("theme") || "Light"
   }, [])
 
+  useEffect(()=>{
+    localStorage.setItem("recent-words-from-dictionary", JSON.stringify(recentWords))
+  },[recentWords])
+
+
+
   return (
     <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/result/:wordToSearchFor' element={<ResultsPage />} />
+      <Route path='/' element={<HomePage setRecentWords={setRecentWords} recentWords={recentWords} />} />
+      <Route path='/result/:wordToSearchFor' element={<ResultsPage recentWords={recentWords} setRecentWords={setRecentWords} />} />
     </Routes>
    
   )

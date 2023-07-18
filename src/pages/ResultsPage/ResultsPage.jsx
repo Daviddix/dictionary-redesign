@@ -7,7 +7,7 @@ import Loader from "../../Components/Loader/Loader"
 import Error from "../../Components/Error/Error"
 import Definition from "../../Components/Definition/Definition"
 
-function ResultsPage() {
+function ResultsPage({setRecentWords, recentWords}) {
     const {wordToSearchFor} = useParams()
     const [dataFromFetch, setDataFromFetch] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -31,6 +31,10 @@ function ResultsPage() {
             setError(false)
             setDataFromFetch(result[0])
             setIsLoading(false)
+            setRecentWords((prev)=> [...prev, wordToSearchFor])
+            // const newArr = [...recentWords]
+            // newArr.push(wordToSearchFor)
+            // localStorage.setItem("recent-words-from-dictionary", JSON.stringify(newArr))
         }
         
        })
@@ -53,7 +57,7 @@ function ResultsPage() {
         return <PartOfSpeech 
         setPartOfSpeechIndex={setPartOfSpeechIndex}
         partOfSpeechIndex={partOfSpeechIndex}
-        key={meaning.partOfSpeech}
+        key={index}
         index={index}
         value={meaning.partOfSpeech} />
     })
@@ -100,7 +104,7 @@ function ResultsPage() {
     {error == false? <div className="result-from-search">
         <header>
             <div className="text-and-icon">
-                <h1>{dataFromFetch.word}</h1>
+                <h1>{dataFromFetch?.word}</h1>
                 <button
                 onClick={()=> playAudio(audioRef)}
                 >

@@ -1,10 +1,10 @@
 import x from "../../../assets/icons/x-circle.svg"
 import "./RecentWord.css"
 
-function RecentWord() {
+function RecentWord({word}) {
   return (
     <div className="recent-word">
-    <p>Amazing</p>
+    <p>{word}</p>
     
     <button>
     <svg 
