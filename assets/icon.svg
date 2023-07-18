@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="108" height="108" viewBox="0 0 108 108">
+  <defs>
+    <path id="path-1" fill-rule="evenodd" d="M21 2h66c9.38255542 0 17 7.61744458 17 17v66c0 9.38255542-7.61744458 17-17 17H21c-9.38255542 0-17-7.61744458-17-17V19C4 9.61744458 11.61744458 2 21 2z"/>
+    <filter id="filter-2" width="200%" height="200%" x="-50%" y="-50%" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="2" in="SourceAlpha" result="shadow-1-feOffset-shadow"/>
+      <feGaussianBlur in="shadow-1-feOffset-shadow" result="shadow-1-feGaussianBlur-shadow" stdDeviation="2.41"/>
+      <feColorMatrix in="shadow-1-feGaussianBlur-shadow" result="shadow-1-feColorMatrix-shadow" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0"/>
+    </filter>
+  </defs>
+  <g>
+    <g>
+      <use fill="black" stroke="black" stroke-opacity="0" stroke-width="0" filter="url(#filter-2)" xlink:href="#path-1"/>
+      <use fill="rgb(39,36,47)" xlink:href="#path-1"/>
+    </g>
+    <text font-size="0" style="white-space:pre">
+      <tspan x="29" y="75" fill="rgb(255,255,255)" font-family="MAZIUS REVIEW 20.09" font-size="65" font-weight="400" style="white-space:pre;text-transform:none" letter-spacing="-.48">D</tspan>
+    </text>
+  </g>
+</svg>
