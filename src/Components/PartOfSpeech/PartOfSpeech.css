@@ -10,14 +10,24 @@
     max-width: fit-content;
     padding: .5rem 2.5rem;
     background-color: var(--partOfSpeechInactiveLight);
-    opacity: .4;
+    opacity: .5;
     border: none;
     margin: 0 2rem 0 0;
+    transition: transform .2s ease-in-out;
+    -webkit-transition: transform .2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out;
+    -ms-transition: transform .2s ease-in-out;
+    -o-transition: transform .2s ease-in-out;
 }
 
 .part-of-speech.active{
     background-color: var(--partOfSpeechActiveLight);
     opacity: 1;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
 }
 
 .part-of-speech p{

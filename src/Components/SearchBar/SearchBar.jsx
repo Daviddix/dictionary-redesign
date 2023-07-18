@@ -1,20 +1,25 @@
 import { useNavigate } from "react-router-dom"
 import "./SearchBar.css"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 
 function SearchBar() {
   const navigate = useNavigate()
   const [wordToSearchFor, setWordToSearchFor] = useState("")
+  const inputRef = useRef()
+
   return (
     <form 
     onSubmit={(e)=>{
       e.preventDefault()
+      inputRef.current.blur()
       navigate(`/result/${wordToSearchFor}`)
+      setWordToSearchFor("")
     }}
     className="search-bar">
 
     <input 
+    ref={inputRef}
     value={wordToSearchFor}
     onChange={(e)=> setWordToSearchFor(e.target.value)}
     required

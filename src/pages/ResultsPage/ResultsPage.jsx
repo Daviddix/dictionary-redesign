@@ -32,9 +32,6 @@ function ResultsPage({setRecentWords, recentWords}) {
             setDataFromFetch(result[0])
             setIsLoading(false)
             setRecentWords((prev)=> [...prev, wordToSearchFor])
-            // const newArr = [...recentWords]
-            // newArr.push(wordToSearchFor)
-            // localStorage.setItem("recent-words-from-dictionary", JSON.stringify(newArr))
         }
         
        })

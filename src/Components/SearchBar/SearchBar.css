@@ -16,9 +16,11 @@
 .search-bar input{
     flex:1;
     border: none;
-    background-color: var(--searchBarColorLight);
+    background-color: inherit;
     outline: none;
     caret-color: var(--textColorLight);
+    color: var(--textColorLight);
+    font-family: inter;
 }
 
 .search-bar input::placeholder{
@@ -50,4 +52,8 @@
     -moz-border-radius: .4rem;
     -ms-border-radius: .4rem;
     -o-border-radius: .4rem;
+}
+
+.search-bar:focus-within{
+    background-color: var(--resultPageHeaderLight);
 }
