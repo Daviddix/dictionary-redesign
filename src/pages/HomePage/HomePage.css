@@ -150,6 +150,7 @@ main{
 .left > h1{
     font-size: 4rem;
     font-family: midevil;
+    font-weight: 500;
 }
 
 .left > p{

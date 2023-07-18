@@ -125,7 +125,7 @@ function ResultsPage({setRecentWords, recentWords}) {
         </div>
 
         <p className="external-link">
-            Read More: <a href="" target="_blank">{dataFromFetch?.sourceUrls[0]}</a>
+            Read More: <a href={dataFromFetch?.sourceUrls[0]} target="_blank">{dataFromFetch?.sourceUrls[0]}</a>
         </p>
     </div>: <Error />}
     </main>
