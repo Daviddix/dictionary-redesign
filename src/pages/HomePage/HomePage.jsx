@@ -8,6 +8,21 @@ import EmptyRecentWord from "../../Components/EmptyRecentWord/EmptyRecentWord"
 function HomePage({recentWords,setRecentWords}) {
   const [showSettingsModal, setShowSettingsModal] = useState(false)
   const [activeAccentColor, setActiveAccentColor] = useState(()=> localStorage.getItem("active-accent-color") || "purple")
+  const systemTheme = window.matchMedia("(prefers-color-scheme : dark)").matches ? "dark" : "light"
+  let themeOfSystem = systemTheme == "dark"? "System Settings Dark" : "System Settings Light"
+
+  const [activeTheme, setActiveTheme] = useState(localStorage.getItem("theme") || themeOfSystem)
+
+  useLayoutEffect(()=>{
+    
+    if(activeTheme == "System Settings Dark"){
+      localStorage.setItem("theme", "System Settings Dark")
+      document.body.dataset.theme = "System Settings Dark"
+  }else if(activeTheme == "System Settings Light"){
+      localStorage.setItem("theme", "System Settings Light")
+      document.body.dataset.theme = "System Settings Light"
+  }
+  }, [])
 
   useEffect(() => {
     setRecentWords(noDuplicates) 
@@ -85,6 +100,8 @@ function HomePage({recentWords,setRecentWords}) {
     </div>
 
     {showSettingsModal && <Settings 
+    activeTheme={activeTheme}
+    setActiveTheme={setActiveTheme}
     activeAccentColor={activeAccentColor}
     setActiveAccentColor={setActiveAccentColor}
     toggleSettingsModal={toggleSettingsModal} />}

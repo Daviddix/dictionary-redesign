@@ -1,15 +1,16 @@
 import ColorCircle from "../ColorCircle/ColorCircle"
 import Theme from "../Theme/Theme"
-import "./Settings.css"
+import "./Settings.css" 
 import {useEffect, useState} from "react"
 
-function Settings({toggleSettingsModal, activeAccentColor, setActiveAccentColor}) {
-    const [activeTheme, setActiveTheme] = useState(localStorage.getItem("theme") || "Light")
+function Settings({toggleSettingsModal, activeAccentColor, setActiveAccentColor, activeTheme, setActiveTheme}) {
+   
 
     useEffect(()=>{
         if (activeTheme == "System Settings Dark" || activeTheme == "System Settings Light") {
             setActiveTheme("System Settings")
         }
+
     }, [])
 
     const accentColors = 

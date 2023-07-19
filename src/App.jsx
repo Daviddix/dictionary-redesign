@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import {useEffect, useLayoutEffect, useState} from "react"
 import './App.css'
-import HomePage from './pages/HomePage/HomePage'
+import HomePage from './pages/HomePage/HomePage' 
 import ResultsPage from './pages/ResultsPage/ResultsPage'
 
 function App() {
