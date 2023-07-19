@@ -119,8 +119,4 @@
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
-    background-image: linear-gradient(to right, var(--primaryColor), var(--partOfSpeechActiveLight));
-    background-clip: text;
-    color: transparent;
-    text-align: center;
 }

@@ -24,11 +24,6 @@
 .part-of-speech.active{
     background-color: var(--partOfSpeechActiveLight);
     opacity: 1;
-    transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
 }
 
 .part-of-speech p{
