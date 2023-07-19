@@ -67,6 +67,7 @@ header.results-page-header{
     font-size: 1.4rem;
     max-width: 100%;
     margin: 6rem 0 2rem;
+    word-wrap: anywhere;
 }
 
 .external-link a{
